@@ -1,123 +1,167 @@
-## 📊 Geschlechterunterschiede bei der Arbeitslosigkeit in Nordbayern
+## 📊 Gender Differences in Unemployment in Northern Bavaria
 
-This project analyzes gender-specific differences in unemployment rates in selected
-regions of **North Bavaria (Nordbayern)**.  
-The focus lies on identifying **regional patterns** and **urban–rural differences**
-rather than proposing direct political solutions.
+This project analyzes gender-specific differences in unemployment rates in **Northern Bavaria**
+over the period **2018–2023** using official regional statistics.
 
-The project is designed as an **exploratory data analysis** that aims to make
-structural disparities visible and encourage further discussion.
+The analysis focuses on identifying **temporal trends** and **gender-based disparities**
+rather than proposing direct political measures. The project is designed as an
+**exploratory data analysis** that supports data-driven discussion on regional labor
+market inequalities.
 
 ---
 
 ## 🎯 Project Objective
 
-The objective of this project is to:
+The main objective of this project is to examine whether unemployment rates differ
+systematically between **women and men** in Northern Bavaria and how these differences
+develop over time.
 
-- compare unemployment rates of **women and men**
-- analyze the **gender gap** in unemployment
-- focus on **regional differences within North Bavaria**
-- highlight contrasts between **urban and rural regions**
-
-This analysis does **not** aim to solve the problem, but rather to **illustrate and
-contextualize existing inequalities**.
+The project explores:
+- Gender-specific unemployment trends
+- The evolution of the gender gap
+- Overall labor market dynamics in Northern Bavaria
 
 ---
 
 ## ⚖️ Analysis Dimensions
 
-- **Women**  
-  Analysis of the female unemployment rate across selected regions in North Bavaria.
+### Women
+Analysis of unemployment rates among women over time.
 
-- **Men**  
-  Analysis of the male unemployment rate across the same regions.
+### Men
+Analysis of unemployment rates among men over the same period.
 
-- **Gender Gap**  
-  Difference between female and male unemployment rates
-  (female rate minus male rate).
+### Gender Gap
+Calculation of the difference between female and male unemployment rates
+(Women − Men) to identify gender-specific inequalities.
+
+### Overall Unemployment
+Average unemployment rate across genders to provide a general labor market overview.
 
 ---
 
 ## 🚀 Features
 
-- Automated data loading and cleaning using **pandas**
-- Regional filtering with focus on **North Bavaria**
-- Gender-based comparison of unemployment rates
-- Calculation and visualization of the **gender gap**
-- Clear and reproducible visualizations using **Matplotlib**
+- **Automated Data Processing**  
+  CSV-based statistical data is loaded, cleaned, and transformed using pandas.
+
+- **Comparative Gender Analysis**  
+  Direct comparison between women and men across multiple years.
+
+- **Gender Gap Calculation**  
+  Quantifies differences in unemployment rates.
+
+- **Automated Plot Generation**  
+  Clear and reproducible visualizations using Matplotlib.
+
+- **Reproducibility**  
+  Deterministic results based on fixed input data and scripts.
 
 ---
 
 ## 📁 Project Structure
-
-### 📂 Outputs/
-- **01_frauen_vs_maenner.png**  
-  Comparison of unemployment rates between women and men by region  
-  *(selection: North Bavaria)*
-
-- **02_gender_gap.png**  
-  Visualization of the gender gap in unemployment rates by region
-
-- **03_gesamt.png**  
-  Overall unemployment rate per region
-
----
-
-### 📂 src/
-- **config.py**  
-  Configuration file (file paths, column names, CSV settings)
-
-- **data_loader.py**  
-  Loading, cleaning, and preprocessing of the CSV data
-
-- **plots.py**  
-  Generation of bar charts and comparative visualizations
-
-- **utils.py**  
-  Helper functions (e.g. directory creation)
+Arbeitslosigkeit_Deutschland/
+│
+├── data/
+│   └── raw/
+│       └── arbeitslosigkeit_nordbayern_gender_2018_2023.csv
+│
+├── Outputs/
+│   ├── 01_women_vs_men.png
+│   ├── 02_gender_gap.png
+│   └── 03_overall_trend.png
+│
+├── src/
+│   ├── config.py
+│   ├── data_loader.py
+│   ├── plots.py
+│   └── utils.py
+│
+├── main.py
+├── requirements.txt
+└── README.md
 
 ---
 
-## 📊 Interpretation of Results
+## 📊 Outputs
 
-The generated visualizations highlight that:
+### 👩‍🦰👨‍🦱 Women vs. Men
 
-- unemployment rates differ noticeably across regions
-- gender-specific differences vary depending on regional context
-- urban and rural labor markets show distinct patterns
+Comparison of unemployment rates for women and men in Northern Bavaria over time.
 
-The results should be interpreted as **descriptive insights** rather than causal explanations.
+![Women vs Men](Outputs/01_women_vs_men.png)
 
 ---
 
-## 🛠 Installation & Usage
-This project can be executed locally to reproduce the analysis and vizualisations.
+### ⚖️ Gender Gap
 
-### 1. Install dependencies:
-Install all the required Python packages using:
+Visualization of the difference between female and male unemployment rates
+(Women − Men).
 
+![Gender Gap](Outputs/02_gender_gap.png)
+
+---
+
+### 🌍 Overall Unemployment
+
+Trend of the average unemployment rate across genders.
+
+![Overall Unemployment](Outputs/03_overall_trend.png)
+
+---
+
+## 🧩 Code Overview
+
+### config.py
+Defines file paths, output directories, and visualization settings
+(colors, figure size, resolution).
+
+### data_loader.py
+Loads the CSV dataset, cleans the data, reshapes it into a usable format,
+and computes the gender gap.
+
+### plots.py
+Generates all visualizations and saves them automatically to the Outputs folder.
+
+### utils.py
+Contains small helper functions (e.g., ensuring output directories exist).
+
+---
+
+## 📈 Interpretation of Results
+
+The analysis shows that unemployment rates for women in Northern Bavaria are
+consistently slightly higher than those for men throughout the observed period.
+The size of the gender gap fluctuates over time, indicating that gender-specific
+disparities are influenced by broader economic conditions.
+
+The overall unemployment trend reflects structural labor market developments
+and highlights periods of economic stress and recovery.
+
+---
+
+## 🛠 Installation and Usage
+
+### Install Dependencies
 ```bash
 pip install -r requirements.txt
-
 ```
-### 2. Run the analysis:
-Execute the main script to load the data, process it, and generate the visualizations:
 
-```bash
+### Run the Analysis
+```bash 
 python main.py
-
 ```
-The generated figures will be saved automatically in the Outputs/folder.
 
----
+All output figures will be generated automatically in the Outputs/ directory.
 
-## ℹ️ Notes on Data
+## 📚 Notes on Data
 
-The CSV file path and column names are defined in config.py.
-The analysis is fully reproducible based on the provided configuration and input data.
+The dataset is based on aggregated regional unemployment statistics
+for Northern Bavaria. The analysis does not differentiate between individual
+cities or districts but focuses on regional-level trends.
 
-## 📌 Disclaimer
+## ⚠️ Disclaimer
 
 This project serves academic and illustrative purposes.
 It does not claim completeness or policy relevance, but aims to support
-data-driven discussion on regional labor market inequalities.
+data-driven discussion on regional labor market inequalities
