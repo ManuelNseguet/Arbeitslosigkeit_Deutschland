@@ -64,7 +64,7 @@ Arbeitslosigkeit_Deutschland/
 │
 ├── data/
 │   └── raw/
-│       └── arbeitslosigkeit_nordbayern_gender_2018_2023.csv
+│       └── Arbeitslosigkeit_maenner_frauen.csv
 │
 ├── Outputs/
 │   ├── 01_women_vs_men.png
