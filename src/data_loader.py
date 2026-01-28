@@ -2,13 +2,18 @@ import pandas as pd
 from src.config import DATA_PATH
 
 def load_data():
-    """
-    Load unemployment data from CSV and perform basic validation.
-    """
     df = pd.read_csv(DATA_PATH)
 
-    required_columns = {"year", "region", "gender", "unemployment_rate"}
-    if not required_columns.issubset(df.columns):
-        raise ValueError("CSV file is missing required columns.")
+    # Einheitliche Spaltennamen
+    df.columns = ["Year", "Region", "Gender", "Unemployment"]
 
-    return df
+    # Pivot: Women / Men als Spalten
+    pivot = df.pivot(index="Year", columns="Gender", values="Unemployment").reset_index()
+
+    # Gender Gap
+    pivot["GenderGap"] = pivot["Women"] - pivot["Men"]
+
+    # Gesamtwert (Mittelwert)
+    pivot["Total"] = (pivot["Women"] + pivot["Men"]) / 2
+
+    return pivot
