@@ -1,6 +1,6 @@
 from pathlib import Path
 
-DATA_PATH = Path("data/raw/arbeitslosigkeit_nordbayern_gender_2018_2023.csv")
+DATA_PATH = Path("data/raw/arbeitslosigkeit_maenner_frauen.csv")
 OUTPUT_DIR = Path("Outputs")
 
 FIG_SIZE = (8, 5)
