@@ -5,18 +5,15 @@ from src.plots import (
     plot_overall_trend
 )
 from src.config import OUTPUT_DIR
+from src.utils import ensure_dir
 
 def main():
-    OUTPUT_DIR.mkdir(exist_ok=True)
-
+    ensure_dir(OUTPUT_DIR)
     df = load_data()
 
     plot_women_vs_men(df)
     plot_gender_gap(df)
     plot_overall_trend(df)
-
-    print("All visualizations have been successfully created.")
-
 
 if __name__ == "__main__":
     main()
